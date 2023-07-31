@@ -158,3 +158,6 @@ BRAINTREE_PUBLIC_KEY = 'f9qq8q8mws2xr59x'
 # 私钥from braintree import Configuration, Environment
 BRAINTREE_PRIVATE_KEY = 'e7ae77a228f2216f524fda334f8ee4a6'
 BRAINTREE_CONF = braintree.Configuration(braintree.Environment.Sandbox, BRAINTREE_MERCHANT_ID, BRAINTREE_PUBLIC_KEY, BRAINTREE_PRIVATE_KEY)
+
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
