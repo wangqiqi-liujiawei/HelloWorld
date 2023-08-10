@@ -1,16 +1,17 @@
 {% extends "shop/base.html" %}
 {% load static %}
+{% load i18n %}
 
 {% block title %}
-    {% if category %}{{category.name}}{%else%}Products{%endif%}
+    {% if category %}{{category.name}}{%else%}{% trans "Products" %}{%endif%}
 {% endblock %}
 
 {% block content %}
     <div id="sidebar">
-        <h3>Categories</h3>
+        <h3>{% trans "Categories" %}</h3>
         <ul>
             <li {% if not category %}class="selected"{% endif %}>
-                <a href="{% url 'shop:produtc_list' %}">All</a>
+                <a href="{% url 'shop:produtc_list' %}">{% trans "All" %}</a>
             </li>
             {% for c in categories %}
                 <li {% if category.slug == c.slug %} class="selected" {% endif %}>
@@ -20,15 +21,17 @@
         </ul>
     </div>
     <div id="main" class="product-list">
-        <h1>{% if category %}{{category.name}}{%else%}Products{%endif%}</h1>
+        <h1>{% if category %}{{category.name}}{%else%}{% trans "Products" %}{%endif%}</h1>
         {% for p in products %}
-        <div class="item">
-            <a href="{{p.get_absolute_url}}">
-                <img src="{% if p.image%}{{p.image.url}}{% else %}{%static 'img/no_image.png' %}{% endif %}">
-            </a>
-            <br><a href="{{p.get_absolute_url}}">{{p.name}}</a>
-            <br>{{p.price}}元
-        </div>
+            <div class="item">
+                <div>
+                    <a href="{{p.get_absolute_url}}">
+                        <img src="{% if p.image%}{{p.image.url}}{% else %}{% static 'img/no_image.png' %}{% endif %}">
+                    </a>
+                </div>
+                <div><a href="{{p.get_absolute_url}}">{{p.name}}</a></div>
+                <div>{{p.price}}元</div>
+            </div>
         {% endfor %}
 </div>
 {% endblock %}

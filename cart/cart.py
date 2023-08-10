@@ -1,6 +1,8 @@
 from django.conf import settings
 from shop.models import Product
 from decimal import Decimal as dec
+from coupons.models import Coupon
+from decimal import Decimal
 
 
 class Cart(object):
@@ -10,6 +12,7 @@ class Cart(object):
         if not cart:
             cart = self.sesion[settings.CART_SESSION_ID] = {}
         self.cart = cart
+        self.coupon_id = self.sesion.get('coupon_id')
 
     def save(self):
         # 会话对象它已经被修改 当设置为 True 时，Django 会根据每个请求将会话保存到数据库中。
@@ -52,3 +55,20 @@ class Cart(object):
     def clear(self):
         del self.sesion[settings.CART_SESSION_ID]
         self.save()
+
+    @property
+    def coupon(self):
+        if self.coupon_id:
+            try:
+                return Coupon.objects.get(id=self.coupon_id)
+            except Coupon.DoesNotExist:
+                pass
+        return None
+
+    def get_discount(self):
+        if self.coupon:
+            return self.get_total_price() - (self.coupon.discount / Decimal(100)) * self.get_total_price()
+        return Decimal(0)
+
+    def get_total_price_after_discount(self):
+        return self.get_total_price() - self.get_discount()

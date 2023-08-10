@@ -1,11 +1,13 @@
 {% extends "shop/base.html" %}
 {% load static %}
 
+{% load i18n %}
+
 {% block title %}
     Payment canceled
 {% endblock %}
 
 {% block content %}
-    <h1> Your payment has not been process</h1>
-    <p>There is a problem processing your payment </p>
+    <h1>{% trans 'Your payment has not been process' %} </h1>
+    <p>{% trans 'There is a problem processing your payment' %} </p>
 {% endblock %}

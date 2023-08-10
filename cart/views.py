@@ -3,6 +3,8 @@ from django.views.decorators.http import require_POST
 from shop.models import Product
 from .cart import Cart
 from .forms import CartAddProductForm
+from coupons.forms import CouponForm
+from shop.recommender import Recommender
 
 
 # Create your views here.
@@ -33,6 +35,13 @@ def cart_detail(request):
                      'override': True
                      }
         )
+    r = Recommender()
+    cart_products = [item['product'] for item in cart]
+    if len(cart_products) > 0:
+        recommended_products = r.suggest_product_for(cart_products, max_results=4)
+    else:
+        recommended_products = None
+    coupon_apply_form = CouponForm()
     html = 'cart/detail.html'
-    datas = {'cart': cart}
+    datas = {'cart': cart, 'coupon_apply_form': coupon_apply_form, 'recommended_products': recommended_products}
     return render(request, html, datas)

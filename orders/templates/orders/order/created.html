@@ -1,12 +1,16 @@
 {% extends "shop/base.html" %}
 {% load static %}
+{% load i18n %}
 
 {% block title %}
-   Thank You
+{% trans "Thank you" %}
 {% endblock %}
 
 {% block content %}
-    <h1>   Thank You    </h1>
-    <p>Your order has been successfully completed. Your order number is <strong>{{order.id}}</strong>.</p>
-    <p>You can return and <a href="{% url 'shop:produtc_list' %}">continue shopping.</a></p>
+    <h1>   {% trans "Thank you" %}    </h1>
+    {% blocktrans with order_id=order.id %}
+        <p>Your order has been successfully completed. Your order number is <strong>{{order.id}}</strong>.</p>
+    {% endblocktrans %}
+    <p>{% trans "You can return and " %}<a href="{% url 'shop:produtc_list' %}">{% trans "continue shopping" %}.</a></p>
+    
 {% endblock %}

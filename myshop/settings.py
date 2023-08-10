@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 import os
 import braintree
+from django.utils.translation import gettext_lazy as _
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -44,6 +45,9 @@ INSTALLED_APPS = [
     'cart.apps.CartConfig',
     'orders.apps.OrdersConfig',
     'payment.apps.PaymentConfig',
+    'coupons.apps.CouponsConfig',
+    'rosetta',
+    'parler',
 ]
 
 MIDDLEWARE = [
@@ -54,6 +58,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
 ]
 
 ROOT_URLCONF = 'myshop.urls'
@@ -161,3 +166,25 @@ BRAINTREE_CONF = braintree.Configuration(braintree.Environment.Sandbox, BRAINTRE
 
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+
+PARLER_LANGUAGES = {
+    None: (
+        {'code': 'zh-hans'},
+        {'code': 'en'},
+    ),
+    'default': {
+        'fallback': 'zh-hans',
+        'hide_untranslated': False,
+    }
+}
+LANGUAGES = (('zh-hans', _('简体中文')), ('en', _('English')))
+LANGUAGE_CODE = 'zh-hans'
+PARLER_DEFAULT_LANGUAGE_CODE = 'zh-hans'
+LOCALE_PATHS = (os.path.join(BASE_DIR, 'locale/'),)
+
+
+# redis config
+REDIS_HOST = '192.168.233.4'
+REDIS_PORT = 6379
+REDIS_DB = 1
+REDIS_PASSWORD = 'redis'

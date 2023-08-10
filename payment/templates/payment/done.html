@@ -1,11 +1,11 @@
 {% extends "shop/base.html" %}
 {% load static %}
-
+{% load i18n %}
 {% block title %}
     Payment successful
 {% endblock %}
 
 {% block content %}
-    <h1> Your payment was successful</h1>
-    <p>Your payment has been processed successful. You can <a href="{% url 'shop:produtc_list'%}">continue shopping</a> </p>
+    <h1> {% trans 'Your payment was successful' %}</h1>
+    <p>{% trans 'Your payment has been processed successful. You can ' %}<a href="{% url 'shop:produtc_list'%}">{% trans 'continue shopping' %}</a> </p>
 {% endblock %}

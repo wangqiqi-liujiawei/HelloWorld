@@ -9,6 +9,7 @@ from django.http import HttpResponse
 from django.template.loader import render_to_string
 from django.conf import settings
 import weasyprint
+# from decimal import Decimal
 
 
 # Create your views here.
@@ -20,7 +21,11 @@ def order_create(request):
         form = OrderCreateForm(request.POST)
         if form.is_valid():
             # 生成新的订单但
-            order = form.save()
+            order = form.save(commit=False)
+            if cart.coupon:
+                order.coupon = cart.coupon
+                order.discount = cart.coupon.discount
+            order.save()
             for item in cart:
                 OrderItem.objects.create(order=order,
                                          product=item['product'],

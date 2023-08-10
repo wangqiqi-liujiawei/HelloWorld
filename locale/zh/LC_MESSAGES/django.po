@@ -1,0 +1,310 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-08-09 18:47+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: .\cart\forms.py:9
+msgid "Quantity"
+msgstr "数量"
+
+#: .\cart\templates\cart\detail.html:6 .\cart\templates\cart\detail.html:10
+msgid "Your shopping cart"
+msgstr "你的购物车"
+
+#: .\cart\templates\cart\detail.html:14
+msgid "image"
+msgstr "图片"
+
+#: .\cart\templates\cart\detail.html:15
+msgid "product"
+msgstr "产品"
+
+#: .\cart\templates\cart\detail.html:16
+msgid "quantity"
+msgstr "数量"
+
+#: .\cart\templates\cart\detail.html:17
+msgid "remove"
+msgstr "清除"
+
+#: .\cart\templates\cart\detail.html:18
+msgid "unit price"
+msgstr "单价"
+
+#: .\cart\templates\cart\detail.html:19
+msgid "price"
+msgstr "总价"
+
+#: .\cart\templates\cart\detail.html:38
+msgid "Update"
+msgstr "更新"
+
+#: .\cart\templates\cart\detail.html:44
+msgid "Remove"
+msgstr "清除"
+
+#: .\cart\templates\cart\detail.html:59
+msgid "Subtotal"
+msgstr "小计"
+
+#: .\cart\templates\cart\detail.html:64
+#, fuzzy, python-format
+#| msgid ""
+#| "\n"
+#| "                %(items)s item, $%(total)s\n"
+#| "              "
+#| msgid_plural ""
+#| "\n"
+#| "                %(items)s item, $%(total)s\n"
+#| "              "
+msgid ""
+"\n"
+"                    <td>\"%(code)s\" coupon (%(discount)s%% off)</td>\n"
+"                "
+msgstr ""
+"\n"
+"%(items)s item, $%(total)s"
+
+#: .\cart\templates\cart\detail.html:72
+#: .\orders\templates\orders\order\create.html:30
+msgid "Total"
+msgstr "总计"
+
+#: .\cart\templates\cart\detail.html:81
+#: .\shop\templates\shop\product\detail.html:26
+msgid "People who bought this also bought"
+msgstr "买这个的人也买了"
+
+#: .\cart\templates\cart\detail.html:94
+msgid "Apply a coupon"
+msgstr "应用优惠券"
+
+#: .\cart\templates\cart\detail.html:101
+msgid "contiue shopping"
+msgstr "继续购物"
+
+#: .\cart\templates\cart\detail.html:102
+#: .\orders\templates\orders\order\create.html:6
+#: .\orders\templates\orders\order\create.html:10
+msgid "Checkout"
+msgstr "结账"
+
+#: .\coupons\forms.py:6
+msgid "Coupon"
+msgstr "优惠券"
+
+#: .\myshop\settings.py:180
+msgid "简体中文"
+msgstr "Chinese"
+
+#: .\myshop\settings.py:180
+msgid "English"
+msgstr "英语"
+
+#: .\myshop\urls.py:25
+msgid "admin/"
+msgstr "admin/"
+
+#: .\myshop\urls.py:27
+msgid "cart/"
+msgstr "cart/"
+
+#: .\myshop\urls.py:28
+msgid "orders/"
+msgstr "orders/"
+
+#: .\myshop\urls.py:29
+msgid "payment/"
+msgstr "payment/"
+
+#: .\myshop\urls.py:30
+#, fuzzy
+#| msgid "Coupon"
+msgid "coupons/"
+msgstr "coupons/"
+
+#: .\orders\models.py:11
+msgid "first_name"
+msgstr "首次登陆名字"
+
+#: .\orders\models.py:12
+msgid "address"
+msgstr "家庭地址"
+
+#: .\orders\models.py:13
+msgid "last_name"
+msgstr "最后使用的名字"
+
+#: .\orders\models.py:14
+msgid "email"
+msgstr "邮件地址"
+
+#: .\orders\models.py:15
+msgid "postal_code"
+msgstr "邮件编码"
+
+#: .\orders\models.py:16
+msgid "city"
+msgstr "所在城市"
+
+#: .\orders\templates\orders\order\create.html:12
+msgid "Your order"
+msgstr "你的订单"
+
+#: .\orders\templates\orders\order\create.html:23
+#, fuzzy, python-format
+#| msgid ""
+#| "\n"
+#| "                        \"%(code)s\"(%(discount)s%% "
+#| "off)                    "
+msgid ""
+"\n"
+"                        \"%(code)s\"(%(discount)s%% off)\n"
+"                    "
+msgstr "%(code)s(%(discount)s%% 折)"
+
+#: .\orders\templates\orders\order\create.html:34
+msgid "Place order"
+msgstr "订购"
+
+#: .\orders\templates\orders\order\created.html:6
+#: .\orders\templates\orders\order\created.html:10
+msgid "Thank you"
+msgstr "感谢"
+
+#: .\orders\templates\orders\order\created.html:11
+#, fuzzy, python-format
+#| msgid ""
+#| "\n"
+#| "    <p>Your order has been successfully completed. Your order number is "
+#| "<strong>%(order.id)s</strong>.</p>\n"
+#| "    "
+msgid ""
+"\n"
+"        <p>Your order has been successfully completed. Your order number is "
+"<strong>%(order.id)s</strong>.</p>\n"
+"    "
+msgstr ""
+"\n"
+"你的订单已经支付成功，订单号是%(order.id)s"
+
+#: .\orders\templates\orders\order\created.html:14
+msgid "You can return and "
+msgstr "你可以返回并"
+
+#: .\orders\templates\orders\order\created.html:14
+#: .\payment\templates\payment\done.html:10
+msgid "continue shopping"
+msgstr "继续购物"
+
+#: .\orders\urls.py:8
+msgid "create/"
+msgstr "create/"
+
+#: .\payment\templates\payment\cancled.html:11
+msgid "Your payment has not been process"
+msgstr "您的付款尚未处理"
+
+#: .\payment\templates\payment\cancled.html:12
+msgid "There is a problem processing your payment"
+msgstr "处理您的付款有问题"
+
+#: .\payment\templates\payment\done.html:9
+msgid "Your payment was successful"
+msgstr "您已付款成功"
+
+#: .\payment\templates\payment\done.html:10
+msgid "Your payment has been processed successful. You can "
+msgstr "您的付款已成功处理。你可以"
+
+#: .\payment\templates\payment\process.html:7
+msgid "Pay by credit card"
+msgstr "信用卡付款"
+
+#: .\payment\templates\payment\process.html:10
+msgid "Card Number"
+msgstr "卡号"
+
+#: .\payment\templates\payment\process.html:13
+msgid "CVV"
+msgstr "支付密码"
+
+#: .\payment\templates\payment\process.html:16
+msgid "Expiration Date"
+msgstr "截止日期"
+
+#: .\payment\urls.py:9
+msgid "process/"
+msgstr "process/"
+
+#: .\payment\urls.py:10
+msgid "done/"
+msgstr "done/"
+
+#: .\payment\urls.py:11
+msgid "cancled/"
+msgstr "cancled/"
+
+#: .\shop\templates\shop\base.html:7 .\shop\templates\shop\base.html:12
+msgid "My shop"
+msgstr "商城"
+
+#: .\shop\templates\shop\base.html:17
+msgid "Languages"
+msgstr "语言"
+
+#: .\shop\templates\shop\base.html:33
+msgid "Your cart"
+msgstr "你的购物车"
+
+#: .\shop\templates\shop\base.html:35
+#, python-format
+msgid ""
+"\n"
+"                %(items)s item, $%(total)s\n"
+"              "
+msgid_plural ""
+"\n"
+"                %(items)s item, $%(total)s\n"
+"              "
+msgstr[0] ""
+"\n"
+"%(items)s item, $%(total)s"
+msgstr[1] ""
+"\n"
+"%(items)s item, $%(total)s"
+
+#: .\shop\templates\shop\base.html:42
+msgid "Your cart is empty."
+msgstr "你的购物车是空的"
+
+#: .\shop\templates\shop\product\detail.html:20
+msgid "Add to cart"
+msgstr "添加购物车"
+
+#: .\shop\templates\shop\product\list.html:6
+#: .\shop\templates\shop\product\list.html:24
+msgid "Products"
+msgstr "产品"
+
+#: .\shop\templates\shop\product\list.html:11
+msgid "Categories"
+msgstr "分类"
+
+#: .\shop\templates\shop\product\list.html:14
+msgid "All"
+msgstr "所有种类"
