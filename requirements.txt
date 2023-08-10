@@ -1,0 +1,15 @@
+django
+Pillow
+celery
+flower
+braintree
+importlib-metadata==4.8.3
+django-celery-results
+django-celery-beat
+eventlet
+django-celery
+redis
+gevent
+weasyprint
+django-parler
+django-rosetta
